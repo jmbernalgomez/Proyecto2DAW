@@ -200,7 +200,7 @@
 								<?php endif; ?>
 								<?php $id_comentario =  $comentario['id_comentario']?>
 								<?php $respuestasComentarios = getComentariosRespuestas($id_comentario); ?>
-								<?php if(mysqli_num_rows($respuestasComentarios) > 0 ) :?> //
+								<?php if(mysqli_num_rows($respuestasComentarios) > 0 ) :?> &nbsp;
 								<a id="respuestasVer" data-toggle="collapse" href="#respuestas<?= $j ?>" role="button" aria-expanded="false" aria-controls="respuestas">
 									Ver <?= mysqli_num_rows($respuestasComentarios) ?> respuestas <i class="fa fa-caret-down"></i>
 								</a>
@@ -210,7 +210,7 @@
 						</div>
 						<?php if (isset($_SESSION['user']) && $comentario['id_usuario'] == $_SESSION['user']['id']): ?>
 							<div class="col-2 p-0">
-								<h5><a onclick="javascript: return confirm('¿Estás segur@?')" class="float-right clearfix" href="inc/models/comentarios.php?id_comentario=<?= $comentario['id_comentario'] ?>&accion=borrar"><i class="fa fa-trash" style="color: #C82333" area-hidden="true"></i></a></h5>
+								<p><a onclick="javascript: return confirm('¿Estás segur@?')" class="float-right clearfix text-decoration-none text-danger" href="inc/models/comentarios.php?id_comentario=<?= $comentario['id_comentario'] ?>&accion=borrar">Eliminar</a></p>
 							</div>
 						<?php endif ?>
 
@@ -218,31 +218,36 @@
 
 						<div class="container-fluid collapse mb-2" id="responder<?= $j ?>">
 							<div class="card card-body p-0 border-0">
+							<form action="inc/models/responder_comentarios.php?id_comentario=<?= $comentario['id_comentario'] ?>" method="POST">
 								<div class="col-12 row p-0">
-									<div class="col-11 pr-0">
-										<textarea onKeyDown="cuenta()" onKeyUp="cuenta()" class="form-control rounded-0" placeholder="Responder" name="comentario" id="exampleFormControlTextarea1" rows="1"></textarea>
-									</div>
-									<div class="d-none d-xl-block col-1">
-										<button type="submit" class="btn btn-dark rounded-0">Comentar</button>
-									</div>
-									<div class="d-block d-xl-none col-1 p-0">
-										<button type="submit" class="btn btn-dark rounded-0"><i class="fa fa-send"></i></button>
-									</div>
+										<div class="col-11 pr-0">
+											<textarea onKeyDown="cuenta()" onKeyUp="cuenta()" class="form-control rounded-0" placeholder="Responder" name="respuesta" id="exampleFormControlTextarea1" rows="1"></textarea>
+										</div>
+										<div class="d-none d-xl-block col-1">
+											<button type="submit" class="btn btn-dark rounded-0">Comentar</button>
+										</div>
+										<div class="d-block d-xl-none col-1 pl-0">
+											<button type="submit" class="btn btn-dark rounded-0 px-4"><i class="fa fa-send"></i></button>
+										</div>
 								</div>
+								</form>
 							</div>
 						</div>
 						
 						<!-- CONTENEDOR DE RESPUESTAS -->
 
 						<div class="container-fluid collapse pr-sm-0" id="respuestas<?= $j ?>">
-							<div class="card card-body rounded-0 border-0 p-0">
+							<div class="row card-body rounded-0 border-0 p-0">
 							<?php foreach ($respuestasComentarios as $j=>$respuestasComentario) : ?>
 								<div class="col-12 p-0">
-									<div class="float-left mr-3">
+									<div class="float-left mx-3">
 										<img src="images/<?= $respuestasComentario['imagen_perfil'] ?>" style="width: 35px; height: 35px" class="rounded-circle">
 									</div>
 									<h6 class="font-weight-bold mb-0"><?= $respuestasComentario['nombre'].' '.$respuestasComentario['apellidos'] ?></h6>
-									<p class="text-break m-0 mb-2"><?= $respuestasComentario['respuesta']  ?></p>
+									<p class="text-break m-0"><?= $respuestasComentario['respuesta']  ?></p>
+									<?php if (isset($_SESSION['user']) && $respuestasComentario['id_usuario'] == $_SESSION['user']['id']): ?>
+										<p style="margin-left: 67px; margin-bottom: 5px"><a onclick="javascript: return confirm('¿Estás segur@?')" href="inc/models/responder_comentarios.php?id_respuesta=<?= $respuestasComentario['id'] ?>&accion=borrar" class="text-decoration-none text-danger">Eliminar</a></p>
+									<?php endif ?>
 								</div>
 
 							<?php endforeach; ?>

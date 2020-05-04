@@ -161,6 +161,7 @@
 					<a class="dropdown-item" href="entradas.php">Mis Vídeos</a>
 					<a class="dropdown-item" href="favoritos.php">Favoritos</a>
 					<a class="dropdown-item" href="perfil.php">Mi perfil</a>
+					<a class="dropdown-item" data-toggle="modal" data-target="#ModalRestringir">Restringir edad</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="./inc/models/cerrar_sesion.php">Cerrar sesión</a>
 				</li>
@@ -169,6 +170,8 @@
 				<p class="my-2"><a class="enlaceMenu" href="entradas.php">Mis Vídeos</a></p>
 				<p class="mb-2"><a class="enlaceMenu" href="favoritos.php">Favoritos</a></p>
 				<p class="mb-2"><a class="enlaceMenu" href="perfil.php">Mi perfil</a></p>
+				<p class="mb-2"><a class="enlaceMenu" class="dropdown-item" data-toggle="modal" data-target="#ModalRestringir">Restringir edad</a></p>
+				<p class="mb-2"><a ></a></p>
 				<div class="dropdown-divider"></div>
 				<p class="mb-0"><a class="enlaceMenu" href="./inc/models/cerrar_sesion.php">Cerrar sesión</a></p>
 			</div>
@@ -194,3 +197,35 @@
 		  </div>
 		</nav>
 	</header>
+
+						<div class="modal fade rounded-0" id="ModalRestringir" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalCenterTitle">Restricción de edad para los vídeos</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<p>Elige la edad para ver los vídeos, esto te será útil si tus hijos quieren ver los vídeos a través de tu cuenta.</p>
+										<form action="inc/models/restringir_edad.php" method="POST">
+										<div class="input-group mt-3 mb-4">
+											<select class="form-control rounded-0" name="restriccion" required>
+											<option value="" selected disabled>Elegir restricción</option>
+											<option value="3">+3</option>
+											<option value="7">+7</option>
+											<option value="18">+18</option>
+											</select>
+										</div>
+										<div class="alert alert-warning rounded-0" role="alert">
+											La elección se guardará hasta que cierres sesión.
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn botones rounded-0">Restringir</button>
+									</div>
+									</form>
+									</div>
+								</div>
+							</div>

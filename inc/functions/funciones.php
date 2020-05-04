@@ -118,7 +118,18 @@
 				FROM `usuarios` 
 				LEFT JOIN `entradas`
 				ON `usuarios`.`id` = `entradas`.`id_usuario`
-				WHERE categoria = 'general' ORDER BY fecha_subida DESC LIMIT 5";
+				WHERE categoria = 'general' ORDER BY fecha_subida DESC LIMIT 4";
+		$query = mysqli_query($db,$sql);
+		return $query;
+	}
+
+	function getVideosGeneral1($restriccion){ //CATEGORIA GENERAL
+		require 'conn.php';
+		$sql = "SELECT `entradas`.*, `usuarios`.*, `entradas`.`id` as `id_entrada`
+				FROM `usuarios` 
+				LEFT JOIN `entradas`
+				ON `usuarios`.`id` = `entradas`.`id_usuario`
+				WHERE categoria = 'general' AND recomendacion = $restriccion  ORDER BY fecha_subida DESC LIMIT 4";
 		$query = mysqli_query($db,$sql);
 		return $query;
 	}
@@ -129,7 +140,18 @@
 				FROM `usuarios` 
 				LEFT JOIN `entradas`
 				ON `usuarios`.`id` = `entradas`.`id_usuario`
-				WHERE categoria = 'musica' ORDER BY fecha_subida DESC LIMIT 5";
+				WHERE categoria = 'musica' ORDER BY fecha_subida DESC LIMIT 4";
+		$query = mysqli_query($db,$sql);
+		return $query;
+	}
+
+	function getVideosMusica1($restriccion){ //CATEGORIA MÚSICA
+		require 'conn.php';
+		$sql = "SELECT `entradas`.*, `usuarios`.*, `entradas`.`id` as `id_entrada`
+				FROM `usuarios` 
+				LEFT JOIN `entradas`
+				ON `usuarios`.`id` = `entradas`.`id_usuario`
+				WHERE categoria = 'musica' AND recomendacion = $restriccion ORDER BY fecha_subida DESC LIMIT 4";
 		$query = mysqli_query($db,$sql);
 		return $query;
 	}
@@ -140,7 +162,18 @@
 				FROM `usuarios` 
 				LEFT JOIN `entradas`
 				ON `usuarios`.`id` = `entradas`.`id_usuario`
-				WHERE categoria = 'deportes' ORDER BY fecha_subida DESC LIMIT 5";
+				WHERE categoria = 'deportes' ORDER BY fecha_subida DESC LIMIT 4";
+		$query = mysqli_query($db,$sql);
+		return $query;
+	}
+
+	function getVideosDeportes1($restriccion){ //CATEGORIA DEPORTES
+		require 'conn.php';
+		$sql = "SELECT `entradas`.*, `usuarios`.*, `entradas`.`id` as `id_entrada`
+				FROM `usuarios` 
+				LEFT JOIN `entradas`
+				ON `usuarios`.`id` = `entradas`.`id_usuario`
+				WHERE categoria = 'deportes' AND recomendacion = $restriccion ORDER BY fecha_subida DESC LIMIT 4";
 		$query = mysqli_query($db,$sql);
 		return $query;
 	}
@@ -151,7 +184,18 @@
 				FROM `usuarios` 
 				LEFT JOIN `entradas`
 				ON `usuarios`.`id` = `entradas`.`id_usuario`
-				WHERE categoria = 'videojuegos' ORDER BY fecha_subida DESC LIMIT 5";
+				WHERE categoria = 'videojuegos' ORDER BY fecha_subida DESC LIMIT 4";
+		$query = mysqli_query($db,$sql);
+		return $query;
+	}
+
+	function getVideosVideojuegos1($restriccion){ //CATEGORIA VIDEOJUEGOS
+		require 'conn.php';
+		$sql = "SELECT `entradas`.*, `usuarios`.*, `entradas`.`id` as `id_entrada`
+				FROM `usuarios` 
+				LEFT JOIN `entradas`
+				ON `usuarios`.`id` = `entradas`.`id_usuario`
+				WHERE categoria = 'videojuegos' AND recomendacion = $restriccion ORDER BY fecha_subida DESC LIMIT 4";
 		$query = mysqli_query($db,$sql);
 		return $query;
 	}

@@ -1,0 +1,16 @@
+*{
+	font-size: 16px;
+	font-family: 'Lato', sans-serif !important;
+}
+img{
+	width: 100%;
+}
+.fixed{
+	background: red !important;
+}
+#botonCerrar:hover{
+	background: rebeccapurple;
+}
+.disabled{
+	color: rgba(0,0,0,0.3) !important;
+}

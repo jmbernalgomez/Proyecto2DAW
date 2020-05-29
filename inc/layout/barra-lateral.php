@@ -3,7 +3,7 @@
 
 		<div class="col-12 p-0 mb-5 position-relative" id="publicidad">
 			<i class="fa fa-window-close position-absolute" style="top: 10px; right: 10px; cursor: pointer" onclick="cerrarPublicidad()"></i>
-			<img src="./images/publi.jpg" class="w-100" style="height: 260px">
+			<img src="./images/publicidad2.png" class="w-100" style="height: 260px">
 		</div>
 		
 		<?php $videos = getVideosBL() ?>

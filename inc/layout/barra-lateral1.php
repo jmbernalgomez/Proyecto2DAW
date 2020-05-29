@@ -19,7 +19,7 @@
             <img class="rounded-circle" style="width: 115px; height: 110px" src="images/<?= $imagenPerfil ?>">
         </div>
         <div class="col-12 mt-3 p-0 text-justify">
-            <p class="font-weight-bold text-center" style="padding: 5px; background: #4CA875; color: white"><?= mb_strtoupper($usuario['nombre'].' '. $usuario['apellidos'], 'utf-8') ?></p>
+            <p class="font-weight-bold text-center" style="padding: 5px; background: #2abf88; color: white"><?= mb_strtoupper($usuario['nombre'].' '. $usuario['apellidos'], 'utf-8') ?></p>
         </div>
         <div class="col-12 p-0">
             <p style="padding: 5px; border: 1px solid black;" class="text-center"><a href="./inc/models/cerrar_sesion.php" style="text-decoration: none; color: black">Cerrar Sesión</a></p>
@@ -70,9 +70,39 @@
                     <label for="exampleInputPassword1">Contraseña</label>
                     <input type="password" name="pass" class="form-control rounded-0" id="exampleInputPassword1" placeholder="Contraseña">
             </div>
-            <button type="submit" style="padding: 5px; border: 1px solid black; background: white; width: 100%">Iniciar Sesión</button>
+            <a class="text-decoration-none" href="" data-toggle="modal" data-target="#passModal">
+                He olvidado mi contraseña.
+            </a>
+            <button class="mt-2" type="submit" style="padding: 5px; border: 1px solid black; background: white; width: 100%">Iniciar Sesión</button>
             <p style="padding: 5px; border: 1px solid black;" class="text-center mt-2"><a href="./registro.php" style="text-decoration: none; color: black">Registrarse</a></p>
         </form>
+
+        <!-- Modal Recuperar Pass -->
+        <div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <form action="inc/models/restablecer_pass.php" method="POST">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Recuperar contraseña</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Por favor, introduzca su correo electrónico y se le enviará un enlace para recuperar su contraseña.</p>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Correo electrónico: </label>
+                                    <input type="email" class="form-control rounded-0" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introduzca su email" required>
+                                    <small id="emailHelp" class="form-text text-muted">No compartas tu correo con nadie.</small>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn botones rounded-0">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
     <?php endif ; ?>
 

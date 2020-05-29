@@ -22,6 +22,13 @@
 		return $query;
 	}
 
+	function getUltimosUsuarios(){
+		require 'conn.php';
+		$sql = "SELECT * FROM usuarios ORDER BY fecha_registro DESC limit 5";
+		$query = mysqli_query($db,$sql);
+		return $query;
+	}
+
 	function getEntrada($id){ 
 		require 'conn.php';
 		$sql = "SELECT `entradas`.*, `usuarios`.*, `entradas`.`id` as `id_entrada`, `entradas`.`id_usuario` as iduser, `suscripciones`.`id` as scuenta
@@ -30,6 +37,13 @@
 				LEFT JOIN `suscripciones`
 				ON `suscripciones`.`id_suscrito` = `entradas`.`id_usuario`
 				WHERE `entradas`.`id` = $id";
+		$query = mysqli_query($db,$sql);
+		return $query;
+	}
+
+	function getUltimosVideos(){
+		require 'conn.php';
+		$sql = "SELECT * FROM entradas ORDER BY fecha_subida DESC limit 5";
 		$query = mysqli_query($db,$sql);
 		return $query;
 	}
@@ -357,3 +371,23 @@
 		return $recomendacion;
 	}
 
+	function getTotalVideos(){
+		require 'conn.php';
+		$sql = "SELECT * FROM entradas";
+		$query = mysqli_query($db,$sql);
+		return $query;
+	}
+
+	function getTotalUsuarios(){
+		require 'conn.php';
+		$sql = "SELECT * FROM usuarios";
+		$query = mysqli_query($db,$sql);
+		return $query;
+	}
+
+	function getTotalComentarios(){
+		require 'conn.php';
+		$sql = "SELECT * FROM comentarios";
+		$query = mysqli_query($db,$sql);
+		return $query;
+	}

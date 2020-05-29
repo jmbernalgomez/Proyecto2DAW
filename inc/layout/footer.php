@@ -17,8 +17,8 @@
 				<img src="images/k1.jpg" width="50">
 			</div>
 			
-			<p class="font-weight-light mb-0">Desarrollado por <span class="font-weight-bold">José María Bernal</span></p>
-			<p class="font-weight-light mb-0">2º DAW <span class="font-weight-bold">Proyecto Integrado</span></p>
+			<p class="font-weight-light mb-0 text-lg-right text-center">Desarrollado por <span class="font-weight-bold">José María Bernal</span></p>
+			<p class="font-weight-light mb-0 text-lg-right text-center">2º DAW <span class="font-weight-bold">Proyecto Integrado</span></p>
 		</div>
 	</div>
 </footer>

@@ -69,15 +69,20 @@
 			$query = mysqli_query($db,$sql);
 			if ($query) {
 				$_SESSION['success'] = "Se ha registrado con éxito";
+				header('Location:'.$_SERVER['HTTP_REFERER'].'?registrado=si'); 
 			}
 			else{
 				$_SESSION['errors']['general'] = "Fallo al registrarse, puede que el correo ya esté registrado";
+				header('Location:'.$_SERVER['HTTP_REFERER']); 
 			}
 		}
 		else{
-			$_SESSION['errors'] = $errors;
+			$_SESSION['errors'] = $errors; 
+			header('Location:'.$_SERVER['HTTP_REFERER']); 
 		}		
+
+		
 
 	}
 
-	header('Location:'.$_SERVER['HTTP_REFERER']); //Me lleva a la última página en la que he estado
+	

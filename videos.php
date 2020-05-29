@@ -20,8 +20,11 @@
 						<div class="col-12 mb-5">
 							<h5>No se han encontrado resultados para "<?= $busqueda ?>"</h5>
 							<p class="mb-0 mb-lg-5">Prueba con otras palabras clave</p>
-							<div class="col-12 text-center mb-5 pb-5">
-								<img class=" mt-5" src="images/noresults1.png">
+							<div class="col-12 text-center mb-5 pb-5 d-lg-none d-block">
+								<img class=" mt-3" src="images/noresults2.png">
+							</div>
+							<div class="col-12 text-center mb-5 pb-5 d-lg-block d-none">
+								<img class=" mt-3" src="images/noresults1.png">
 							</div>
 							
 						</div>

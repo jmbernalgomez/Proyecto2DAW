@@ -2,6 +2,8 @@
 
 	if (isset($_POST)) {
 		require_once '../functions/conn.php';
+		require_once '../functions/administrador.php';
+
 
 		//Recoger los datos del formulario
 		$email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
@@ -21,14 +23,26 @@
 				if (isset($_SESSION['error_login'])) { //Si existe error login lo borramos
 					session_destroy();
 				}
+				header('Location:'.$_SERVER[HTTP_REFERER]);
 			}
 			else{
 				$_SESSION['error_login'] = "Login incorrecto";
+				header('Location:'.$_SERVER[HTTP_REFERER]);
 			}
 		}
 		else{
-			$_SESSION['error_login'] = "Login incorrecto";
+			if(($email == $usuario_admin) && ($pass == $pass_admin)){
+				$array_admin = array($usuario_admin, $pass_admin);
+
+				$_SESSION['admin'] = $array_admin;
+
+				header('Location: ../../panel_administrador.php');
+
+			}
+			else{
+				$_SESSION['error_login'] = "Login incorrecto";
+				header('Location:'.$_SERVER[HTTP_REFERER]);
+			}
+			
 		}
 	}
-
-	header('Location:'.$_SERVER[HTTP_REFERER]);

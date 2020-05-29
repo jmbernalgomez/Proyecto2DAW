@@ -30,7 +30,7 @@
 	<style>
 		.navFondo{
 			background: white;
-			border-bottom: 6px solid #4ca875;
+			border-bottom: 6px solid #2abf88;
 		}
 		.logo{
 			width: 130px; 
@@ -45,21 +45,25 @@
 		.buscador{
 			width: 500px !important;
 		}
-		.botones, .iconos{
-			background: #4ca875;
+		.botones{
+			background: #2abf88;
+			color: white;
+		}
+		.iconos{
+			background: linear-gradient(to right, rgba(43,191,137,1) 0%, rgba(29,149,103,1) 85%, rgba(29,149,103,1) 100%);
 			color: white;
 		}
 		.botones:hover{
-			background: #6dc493;
+			background: #24af7a;
 			color: white;
 		}
 		.botones-outline{
 			background: white;
-			color: #4ca875;
-			border: 2px solid #4ca875; 
+			color: #2abf88;
+			border: 2px solid #2abf88; 
 		}
 		.botones-outline:hover{
-			background: #4ca875;
+			background: #2abf88;
 			color: white;
 		}
 		.botones-outline-disabled{
@@ -70,7 +74,7 @@
 		/* #4ca875 verde */
 		/* #4CAC77 verde*/
 		input:focus, input.form-control:focus, textarea:focus{
-			outline: 1px solid #4ca875 !important;
+			outline: 1px solid #2abf88 !important;
 			box-shadow: none;
 		}
 		.navbar-toggler{
@@ -82,13 +86,13 @@
 		}
 		.enlaceMenu:hover{
 			text-decoration:none;
-			color: #4ca875 !important;
+			color: #2abf88 !important;
 		}
 		.misvideos{
-			border: 6px solid #4ca875;
+			border: 6px solid #2abf88;
 		}
 		.dropdown-item:active, .dropdown-item:focus{
-			background: #4ca875 !important;
+			background: #2abf88 !important;
 			color: white;
 		}
 		.vjs-big-play-button{
@@ -100,7 +104,7 @@
 			line-height: 60px !important;
 		}
 		.vjs-big-play-button:hover{
-			background: #30B157 !important;
+			background: #2abf88 !important;
 			
 		}
 		.vjs-control-bar{
@@ -113,7 +117,7 @@
 		}
 		.enlacesFooter:hover{
 			text-decoration: none;
-			color: #4ca875;
+			color: #2abf88;
 		}
 
 	</style>
@@ -161,7 +165,7 @@
 					<a class="dropdown-item" href="entradas.php">Mis Vídeos</a>
 					<a class="dropdown-item" href="favoritos.php">Favoritos</a>
 					<a class="dropdown-item" href="perfil.php">Mi perfil</a>
-					<a class="dropdown-item" data-toggle="modal" data-target="#ModalRestringir">Restringir edad</a>
+					<a class="dropdown-item" href="" data-toggle="modal" data-target="#ModalRestringir">Restringir edad</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="./inc/models/cerrar_sesion.php">Cerrar sesión</a>
 				</li>
@@ -170,7 +174,7 @@
 				<p class="my-2"><a class="enlaceMenu" href="entradas.php">Mis Vídeos</a></p>
 				<p class="mb-2"><a class="enlaceMenu" href="favoritos.php">Favoritos</a></p>
 				<p class="mb-2"><a class="enlaceMenu" href="perfil.php">Mi perfil</a></p>
-				<p class="mb-2"><a class="enlaceMenu" class="dropdown-item" data-toggle="modal" data-target="#ModalRestringir">Restringir edad</a></p>
+				<p class="mb-2"><a class="enlaceMenu" href="" class="dropdown-item" data-toggle="modal" data-target="#ModalRestringir">Restringir edad</a></p>
 				<p class="mb-2"><a ></a></p>
 				<div class="dropdown-divider"></div>
 				<p class="mb-0"><a class="enlaceMenu" href="./inc/models/cerrar_sesion.php">Cerrar sesión</a></p>
@@ -188,7 +192,10 @@
 								<label for="exampleInputPassword1">Contraseña</label>
 								<input type="password" name="pass" class="form-control rounded-0" id="exampleInputPassword1" placeholder="Contraseña">
 						</div>
-						<button type="submit" style="padding: 5px; border: 1px solid black; background: white; width: 100%">Iniciar Sesión</button>
+						<a class="text-decoration-none" href="" data-toggle="modal" data-target="#exampleModal">
+							He olvidado mi contraseña
+						</a>
+						<button class="mt-2" type="submit" style="padding: 5px; border: 1px solid black; background: white; width: 100%">Iniciar Sesión</button>
 						<p style="padding: 5px; border: 1px solid black;" class="text-center mt-2"><a href="./registro.php" style="text-decoration: none; color: black">Registrarse</a></p>
 					</form>
 				</div>

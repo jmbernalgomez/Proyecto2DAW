@@ -86,7 +86,7 @@
 						<?php 
 						if (isset($_SESSION['user'])) : ?>
 							<?php if ($like['id_usuario'] == $_SESSION['user']['id']): ?>
-								<a href="inc/models/likes.php?id_entrada=<?= $video['id_entrada'] ?>&estado=1&id_like=<?= $like['id'] ?>" style="text-decoration: none; color: #4ca875;"><span><i class="fa fa-thumbs-up"></i>&nbsp;<?= $likes['likes'] ?></span></a>
+								<a href="inc/models/likes.php?id_entrada=<?= $video['id_entrada'] ?>&estado=1&id_like=<?= $like['id'] ?>" style="text-decoration: none; color: #2abf88;"><span><i class="fa fa-thumbs-up"></i>&nbsp;<?= $likes['likes'] ?></span></a>
 							<?php else: ?>	
 								<a href="inc/models/likes.php?id_entrada=<?= $video['id_entrada'] ?>&estado=0&id_like=<?= $like['id'] ?>" style="text-decoration: none; color: grey;"><span><i class="fa fa-thumbs-o-up"></i>&nbsp;<?= $likes['likes'] ?></span></a>						
 							<?php endif ?>	

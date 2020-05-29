@@ -36,9 +36,18 @@
     					<?= isset($_SESSION['errors']) ? alerta($_SESSION['errors'], 'passc') : '' ?>
   					</div>
   					<div class="d-flex justify-content-end">
-  						<button type="submit" class="btn botones rounded-0">Registrarse</button>
+  						<button onclick="redireccion()" type="submit" class="btn botones rounded-0">Registrarse</button>
   					</div>
 				</form>
+
+				<?php if(isset($_GET['registrado'])) : ?>
+					<script>
+						function redireccion() {
+							setTimeout(function(){ location.href = "index.php"; }, 3000);
+						};
+						redireccion();
+					</script>
+				<?php endif; ?>
 
 
 			</div>

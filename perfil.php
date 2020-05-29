@@ -14,7 +14,7 @@
 			<div class="col-12 col-lg-9 pt-0 pl-sm-0 pb-5 mb-5">
                 <?php if(isset($_SESSION['user'])) : ?>
                     <div class="p-0 mb-3" style="position: relative">
-                        <a  style="position: absolute; bottom: 15px; right: 15px; cursor:pointer; color:white" href="editar_portada.php?portada"><i class="fa fa-pen"></i></a>
+                        <a  style="position: absolute; bottom: 15px; right: 15px; cursor:pointer; color:white" href="editar_portada.php?portada"><i class="fa fa-pencil"></i></a>
                         <img src="images/<?= $portada ?>" style="width:100%; height:200px">
                     </div>
                     <div class="row">
@@ -23,7 +23,7 @@
                         </div>
                         <div class="col-12 col-sm-10">
                             <h4 class="mt-2 font-weight-bold"><?= mb_strtoupper($usuario['nombre'],'utf-8').' '.mb_strtoupper($usuario['apellidos'],'utf-8') ?></h4>
-                            <p class="text-right mr-2" style="margin-top: -34px"><a href="editar_usuario.php"><i class="fa fa-user-cog"></i></a></p>
+                            <p class="text-right mr-2" style="margin-top: -34px"><a href="editar_usuario.php"><i class="fa fa-cog"></i></a></p>
                         </div>
                     </div>
                    <div class="row mt-3">
